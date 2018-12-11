@@ -1,5 +1,5 @@
 # Note
-This is an incomplete project created as a project for Miami University Introduction to Web Design Course (CSE252). This repo serves as a template and can be further developed into a fully functional website. All features are future-proof and can be easily modified to fit specific needs.
+This is an incomplete website created as a project for Miami University Introduction to Web Design Course (CSE252). This repo serves as a template and can be further developed into a fully functional website. All features are future-proof and can be easily modified to fit specific needs.
 
 # Copyrighted Materials
 The logo and images found in this template are copyrighted and only serves as a placeholders. Please remove them if you wish to use this template to avoid copyright infringements.
