@@ -1,0 +1,35 @@
+extends ../layout
+
+append head
+  title Login
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    .container-fluid
+      .row.width100
+        .col-6
+          a.logo.navbar-brand(href='/') PizzaBox
+        .col-6.align-right
+          a.btn.btn-light.navbtn(href='/register') REGISTER
+          a.btn.btn-light.navbtn(href='/login') LOGIN
+  .container-fluid.bd
+    .row.width100
+      .col-3
+      .col-6
+        h1 Login
+        if error
+          .alert.alert-danger(role='alert')= error
+        if success
+          .alert.alert-success(role='alert')= success
+        form(method='post', action='/login')
+          .input-group.margin5
+            .input-group-prepend
+              label.width100px.input-group-text(for='username') Username
+            input#username.form-control.add-form(type='text', name='username', autofocus)
+          .input-group.margin5
+            .input-group-prepend
+              label.width100px.input-group-text(for='password') Password
+            input#password.form-control.add-form(type='password', name='password')
+          .input-group.margin5
+            button.btn.btn-secondary.margin-auto(type='submit') Log In
+      .col-3

@@ -1,0 +1,244 @@
+@font-face {
+  font-family: 'order-pizza';
+  src: url('/fonts/Order Pizza.ttf');
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+}
+
+body {
+  padding: 50px;
+  font-family: Arial, Helvetica, sans-serif;  
+}
+
+.logo {
+  font-family: order-pizza;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.bd {
+  margin-top: 80px;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.width100px {
+  width: 100px;
+}
+
+.width150 {
+  width: 150px;
+}
+
+.navbar-name {
+  color: #FFF;
+  font-size: 25px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.margin5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.align-right {
+  text-align: right;
+  margin: auto;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.customizations {
+  font-style: italic;
+}
+
+.action-btn {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.navbtn {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 5px 30px 5px 30px;
+  margin-left: 20px;
+}
+
+#msg, #msg-delete {
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.cart-button {
+  color: #343a40;
+  font-size: 16px;
+  line-height: 45px;
+  text-align: center;
+  height: 45px;
+  width: 45px;
+  margin: 0 auto;
+  border: 1px solid #343a40;
+  border-radius: 50px;
+  display: block;
+  position: relative;
+  transition: all .2s ease-in-out;
+}
+
+.cart-button:hover, .cart-button:active {
+  color: #fff;
+  background-color: #343a40;
+  width: 80px;
+}
+
+.cart-button:before, .cart-button:after {
+  content: attr(data-tip);
+  color: #fff;
+  background-color: #343a40;
+  border: 0px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  padding: 1px 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  top:-30px;
+}
+
+.cart-button:after {
+  content: '';
+  height: 15px;
+  width: 15px;
+  border-radius: 0;
+  transform: translateX(-50%) rotate(45deg);
+  top: -20px;
+  z-index: -1;
+}
+
+.cart-button:hover:after, .cart-button:hover:before {
+  opacity: 1;
+}
+
+.product-grid {
+  text-align: center;
+  transition: all .5s ease 0s;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+
+  .product-image {
+    img {
+      width: auto;
+      height: 180px;
+      transition: all .5s ease 0s;
+      overflow: hidden;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .product-content {
+    padding: 12px 12px 15px;
+    transition: all .5s ease 0s;
+    height: 160px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 0 10px;
+    transition: all .3s ease 0s;
+  }
+
+  .price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #00864e;
+  }
+
+  .cart {
+    background-color: #fff;
+    width :100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    z-index: 1;
+    transition: all .5s ease 0s;
+
+  }
+}
+
+.product-grid:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  .product-content {
+    opacity: 0;
+  }
+
+  .product-image {
+    
+    img {
+      margin-left: 50%;
+      transform: translateX(-50%) scale(1.1);
+    }
+
+  }
+
+  .cart {
+    opacity: 1;
+    bottom:50px;
+  }
+}
+
+.pad-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.cat-grid {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  border: 1px #343a40 solid;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.cat-grid-selected {
+  background-color: #343a40;
+  color: white;
+  box-shadow: 0 0 30px #343a40;
+}

@@ -1,0 +1,89 @@
+extends ../layout
+
+append head
+  title Ordering
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    .container-fluid
+      .row.width100
+        .col-6
+          a.logo.navbar-brand(href='/') PizzaBox
+        .col-6.align-right
+          a(href='/order/cart')
+            i.fa.fa-shopping-cart.navbar-name
+            span#cart-count.navbar-name.bold  (0) 
+          span.navbar-name Welcome, #{user.firstName} #{user.lastName}
+          a.btn.btn-light.navbtn(href='/order') ORDER
+          a.btn.btn-light.navbtn(href='/logout') LOG OUT
+  .container-fluid.bd
+    .row.width100
+      .col-1
+      .col-10
+        .alert.alert-success(role='alert', id='msg', style="display:none")
+          p Message
+        .alert.alert-danger(role='alert', id='msg-delete', style='display:none')
+          p Message
+      .col-10
+    .row.width100
+      .col-1
+      .col-10
+        h1 Your Cart
+        table.table#cart-table
+          -if(cart.length<=0) {
+          tr
+            td
+              h4 Sorry, your cart is empty! Please add an item to your cart and try again!
+          -} else {
+            -for(let i=0; i<cart.length; i++) {
+              tr(id='row-id-'+cart[i].cart_id)
+                td
+                  h5= cart[i].name
+                  -if(cart[i].item_id<0) {
+                    p.customizations= cart[i].cust
+                  -}
+                td.align-right
+                  .input-group
+                    .input-group-prepend
+                      label.input-group-text(for='inputSelect'+cart[i].cart_id) Quantity
+                    select.custom-select(id='inputSelect'+cart[i].cart_id)
+                      -for(var k=1; k<21; k++) {
+                      option(value=k, selected= k==cart[i].quantity)= k
+                      -}
+                td.align-left
+                  h4(id='price-'+cart[i].cart_id) $#{cart[i].price*cart[i].quantity}
+                td.align-right
+                  button.btn.btn-success.action-btn.update(id=cart[i].cart_id) UPDATE
+                  button.btn.btn-danger.action-btn.remove(id=cart[i].cart_id) REMOVE
+            -}
+              tr
+                td
+                td.align-right
+                  h4 Total:
+                td.align-left
+                  h4#total-price $0
+                td.align-right
+                  button.btn.btn-danger.action-btn.remove-all(id="remove-all") REMOVE ALL
+          -}
+      .col-1
+    .row.width100.margin-top
+      .col-1
+      .col-3
+        h2 Hours
+        ul
+          li Monday-Thursday: 10AM-10PM
+          li Friday-Saturday: 10AM-MIDNIGHT
+          li Sunday: CLOSED
+      .col-4
+        h2 Contact
+        ul 
+          li Phone: (513)-314-9999
+          li Email: services@thepizzabox.com
+      .col-3
+        h2 About Us
+        p We are a local family-owned business. Our pizzas are guaranteed to be fresh!
+      .col-1
+
+append foot
+  script(src='/javascripts/order.js')
+  script(src='/javascripts/cart.js')

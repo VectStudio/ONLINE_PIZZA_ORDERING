@@ -1,0 +1,53 @@
+extends layout
+
+append head
+  title The PizzaBox
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    .container-fluid
+      .row.width100
+        .col-6
+          a.logo.navbar-brand(href='/') PizzaBox
+        .col-6.align-right
+          if loggedIn
+            a(href='/order/cart')
+              i.fa.fa-shopping-cart.navbar-name
+              span#cart-count.navbar-name.bold  (0) 
+            span.navbar-name Welcome, #{user.firstName} #{user.lastName}
+            a.btn.btn-light.navbtn(href='/order') ORDER
+            a.btn.btn-light.navbtn(href='/logout') LOG OUT
+          else
+            a.btn.btn-light.navbtn(href='/register') REGISTER
+            a.btn.btn-light.navbtn(href='/login') LOGIN
+  .container-fluid.bd
+    .row.width100
+      .col-1
+      .col-10
+        h2 Welcome to the PizzaBox! Your destination for Pizza Burgers! ORDER NOW!!!
+      .col-1
+    .row.width100
+      .col-1
+      .col-10
+        image(src='/images/pizza-burger.jpg').width100
+      .col-1
+    .row.width100.margin-top
+      .col-1
+      .col-3
+        h2 Hours
+        ul
+          li Monday-Thursday: 10AM-10PM
+          li Friday-Saturday: 10AM-MIDNIGHT
+          li Sunday: CLOSED
+      .col-4
+        h2 Contact
+        ul 
+          li Phone: (513)-314-9999
+          li Email: services@thepizzabox.com
+      .col-3
+        h2 About Us
+        p We are a local family-owned business. Our pizzas are guaranteed to be fresh!
+      .col-1
+    
+append foot
+  script(src='/javascripts/order.js')

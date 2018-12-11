@@ -1,0 +1,78 @@
+extends ../layout
+
+append head
+  title Ordering
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    .container-fluid
+      .row.width100
+        .col-6
+          a.logo.navbar-brand(href='/') PizzaBox
+        .col-6.align-right
+          a(href='/order/cart')
+            i.fa.fa-shopping-cart.navbar-name
+            span#cart-count.navbar-name.bold  (0) 
+          span.navbar-name Welcome, #{user.firstName} #{user.lastName}
+          a.btn.btn-light.navbtn(href='/logout') LOG OUT
+  .container-fluid.bd
+    .row.width100
+      .col-1
+      .col-10
+        .alert.alert-success(role='alert', id='msg', style="display:none")
+          p Message
+      .col-10
+    .row.width100
+      .col-1
+      .col-10
+        .container
+          -for(var k = 0; k < cats.length; k++) {
+          .row
+            .col-12
+              h2= cats[k].name
+          -for(var i=0;i<products[k].length/4;i++) {
+          .row
+            -for(var j=0;j<4;j++) {
+              .col-3
+                -if(i*4+j<products[k].length) {
+                  .product-grid
+                    .product-image
+                      img.pic(src='/images/'+products[k][i*4+j].picture)
+                    .product-content
+                      h3.title= products[k][i*4+j].name
+                      p= products[k][i*4+j].description
+                      .price $#{products[k][i*4+j].price}
+                    -if(products[k][i*4+j].name=='Create Your Own') {
+                    .cart
+                      a.cart-button(data-tip='CREATE YOUR OWN', href='/order/customize')
+                        i.fa.fa-pencil
+                    -} else {
+                    .cart
+                      button.cart-button.add-to-cart(data-tip='ADD TO CART', id=products[k][i*4+j].id)
+                        i.fa.fa-shopping-cart
+                    -}
+                -}
+            -}
+          -}
+          -}
+      .col-1
+    .row.width100.margin-top
+      .col-1
+      .col-3
+        h2 Hours
+        ul
+          li Monday-Thursday: 10AM-10PM
+          li Friday-Saturday: 10AM-MIDNIGHT
+          li Sunday: CLOSED
+      .col-4
+        h2 Contact
+        ul 
+          li Phone: (513)-314-9999
+          li Email: services@thepizzabox.com
+      .col-3
+        h2 About Us
+        p We are a local family-owned business. Our pizzas are guaranteed to be fresh!
+      .col-1
+
+append foot
+  script(src='/javascripts/order.js')

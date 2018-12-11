@@ -1,0 +1,54 @@
+extends ../layout
+
+append head
+  title Register
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    .container-fluid
+      .row.width100
+        .col-6
+          a.logo.navbar-brand(href='/') PizzaBox
+        .col-6.align-right
+          a.btn.btn-light.navbtn(href='/register') REGISTER
+          a.btn.btn-light.navbtn(href='/login') LOGIN
+  .container-fluid.bd
+    .row.width100
+      .col-3
+      .col-6
+        h1 Register
+        if error
+          each e in error
+            .alert.alert-danger(role='alert')= e
+        form(method='post')
+          .input-group.margin5
+            .input-group-prepend
+              label.width150.input-group-text(for='firstName') First Name
+            input#firstName.form-control.add-form(type='text', name='firstName', value=(typeof data)==="undefined"?"":data.firstName)
+          .input-group.margin5
+            .input-group-prepend
+              label.width150.input-group-text(for='lastName') Last Name
+            input#lastName.form-control.add-form(type='text', name='lastName', value=(typeof data)==="undefined"?"":data.lastName)
+          .input-group.margin5
+            .input-group-prepend
+              label.width150.input-group-text(for='username') Username
+            input#username.form-control.add-form(type='text', name='username', value=(typeof data)==="undefined"?"":data.username)
+          .input-group.margin5
+            .input-group-prepend
+              label.width150.input-group-text(for='password') Password
+            input#password.form-control.add-form(type='password', name='password')
+          .input-group.margin5
+            .input-group-prepend
+              label.width150.input-group-text(for='repassword') Retype Password
+            input#repassword.form-control.add-form(type='password', name='repassword')
+          .input-group.margin5
+            .input-group-prepend
+              label.width150.input-group-text(for='email') Email
+            input#email.form-control.add-form(type='text', name='email', value=(typeof data)==="undefined"?"":data.email)
+          .input-group.margin5
+            .input-group-prepend
+              label.width150.input-group-text(for='phone') Phone Number
+            input#phone.form-control.add-form(type='text', name='phone', maxlength='16', value=(typeof data)==="undefined"?"":data.phoneNum)
+          .input-group.margin5
+            button.btn.btn-secondary.margin-auto(type='submit') Sign Me Up
+      .col-3
