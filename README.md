@@ -1,5 +1,11 @@
+# Note
+This is an incomplete project created as a project for Miami University Introduction to Web Design Course (CSE252). This repo serves as a template and can be further developed into a fully functional website. All features are future-proof and can be easily modified to fit specific needs.
+
+# Copyrighted Materials
+The logo and images found in this template are copyrighted and only serves as a placeholders. Please remove them if you wish to use this template to avoid copyright infringements.
+
 # Project Description
-This is a mockup of an online ordering website. This website provides secure registration and login for users. Only registered users are able to order products. Others will be redirected to the login page when attempting to access unauthorized pages. A logged-in user will be able to add, remove, and update their cart. DOM manipulation provides a seamless experience with no page refresh. All data are stored on a MySQL database and can be securely retrieved. Passwords are securely hashed by bCrypt and sessions allows the user and the cart to be temporarily saved without causing traffics to the database.
+This is a mockup of an online pizza ordering website. This website provides secure registration and login for users. Only registered users are able to order products. Others will be redirected to the login page when attempting to access unauthorized pages. A logged-in user will be able to add, remove, and update their cart. DOM manipulation provides a seamless experience with no page refresh. All data are stored on a MySQL database and can be securely retrieved. Passwords are securely hashed by bCrypt and sessions allows the user and the cart to be temporarily saved without causing traffics to the database.
 
 # Project Tree
 * Public (Directory)
@@ -40,6 +46,7 @@ This is a mockup of an online ordering website. This website provides secure reg
 
 
 # To Run the Application
+0. Install NodeJS and ensure npm is included.
 1. Copy the top section of the code from create.sql, labelled as "CREATE TABLES", and generate the required table in the mysql database.
 2. (Optional) Copy the bottom section of the code from create.sql, labeled as "SEED TEST DATA", and seed the database with sample data.
 3. Upon downloading, a few dependencies must be installed using _npm install_ command. See below for details.
