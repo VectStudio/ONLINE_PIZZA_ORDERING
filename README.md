@@ -1,9 +1,3 @@
-# Note
-This is an incomplete website created as a project for Miami University Introduction to Web Design Course (CSE252). This repo serves as a template and can be further developed into a fully functional website. All features are future-proof and can be easily modified to fit specific needs.
-
-# Copyrighted Materials
-The logo and images found in this template are copyrighted and only serves as a placeholders. Please remove them if you wish to use this template to avoid copyright infringements.
-
 # Project Description
 This is a mockup of an online pizza ordering website. This website provides secure registration and login for users. Only registered users are able to order products. Others will be redirected to the login page when attempting to access unauthorized pages. A logged-in user will be able to add, remove, and update their cart. DOM manipulation provides a seamless experience with no page refresh. All data are stored on a MySQL database and can be securely retrieved. Passwords are securely hashed by bCrypt and sessions allows the user and the cart to be temporarily saved without causing traffics to the database.
 
@@ -61,6 +55,9 @@ This is a mockup of an online pizza ordering website. This website provides secu
   * __express-session__: This dependency allows the easy implementation of session cookies.
 * Development dependencies
   * __Nodemon__: This development dependency detects changes and restart the server automatically.
+  
+# Copyrighted Materials
+The logo and images found in this template are copyrighted and only serves as a placeholders. Please remove them if you wish to use this template to avoid copyright infringements.
 
 # Preview
 ![A preview of the main page of the application.](https://farm2.staticflickr.com/1969/45526351154_636ceed0cb_h.jpg)
